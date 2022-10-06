@@ -1,0 +1,11 @@
+fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${api}&language=en-US&page=${page}`)
+    .then((response) => response.json())
+    .then((data) => {
+       for(let i = 1; i <= data.total_pages; i++) {
+        let pageElm = document.createElement('div');
+        pageElm.innerText = i;
+        pageWrapper.appendChild(pageElm);
+        
+       }
+    })
+}
